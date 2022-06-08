@@ -12,7 +12,7 @@ and [ninja](https://ninja-build.org/). To install meson and ninja, just run:
 pip install -r requirements.txt
 ```
 
-In addition, `HpT-MON` relies on a third party C++ library
+In addition, `cmpx_spfunc` relies on a third party C++ library
 [complex_bessel](https://blog.joey-dumont.ca/complex_bessel/).
 
 #### Compile & run the code
