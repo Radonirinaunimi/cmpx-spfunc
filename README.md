@@ -41,5 +41,5 @@ can be done by running the following:
 ```bash
 meson install
 ```
-This, by default, will install the header files in `/{prefix}/include/higgs-fo` and
+This, by default, will install the header files in `/{prefix}/include/cmpx_spfunc` and
 add `cmp_spfunc.pc` to the PKG path.
