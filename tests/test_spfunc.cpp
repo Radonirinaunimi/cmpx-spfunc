@@ -25,7 +25,7 @@
 #include <string>
 #include <vector>
 
-#include "./include/complex_functions.h"
+#include "../cmpfunc_cpp/include/complex_functions.h"
 
 struct err_message : public std::exception {
   const char *what() const throw() { return "Wrong Parameters!!"; }

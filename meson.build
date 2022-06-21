@@ -17,15 +17,15 @@ glib_dep = [dependency('gsl')]
 cmpx_bes = cxx.find_library('complex_bessel', required: true)
 
 inc = include_directories(
-  ['include']
+  ['cmpfunc_cpp/include']
 )
 
-subdir('include')
-subdir('src')
+subdir('cmpfunc_cpp/include')
+subdir('cmpfunc_cpp/src')
 
 # create executable for main
 higgsexen = executable(
-  'test_spfunc', 'test_spfunc.cpp',
+  'test_spfunc', './tests/test_spfunc.cpp',
   include_directories : inc,
   dependencies : [glib_dep, cmpx_bes],
   link_with : spfunclib,
