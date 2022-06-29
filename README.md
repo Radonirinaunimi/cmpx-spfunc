@@ -19,6 +19,8 @@ In addition, `cmpx_spfunc` relies on a third party C++ library
 
 Thanks to meson, compiling the code is straightforward:
 ```bash
+git clone https://github.com/Radonirinaunimi/cmpx-spfunc.git
+cd cmpx-spfunc
 meson setup builddir
 cd builddir
 meson compile
