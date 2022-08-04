@@ -135,6 +135,18 @@ std::complex<long double> Hyp2F1(std::complex<long double> a,
                                  std::complex<long double> c,
                                  std::complex<long double> z);
 
+std::complex<long double> Hyp2F1(std::complex<long double> a,
+                                 std::complex<long double> b,
+                                 std::complex<long double> c,
+                                 std::complex<long double> z);
+
 std::complex<long double> incBeta(std::complex<long double> x,
                                   std::complex<long double> a,
                                   std::complex<long double> b);
+
+std::complex<long double> incGamma2(std::complex<long double> x,
+                                    std::complex<long double> a);
+
+std::complex<long double> incGamma3(std::complex<long double> x,
+                                    std::complex<long double> a,
+                                    std::complex<long double> b);

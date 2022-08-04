@@ -53,5 +53,19 @@ int main() {
             << "real=" << inbeta.real() << "; img=" << inbeta.imag()
             << std::endl;
 
+  // Compute the Incomplete Beta function with two inputs
+  std::complex<long double> incgamma2 = incGamma2(a, b);
+
+  std::cout << "IncGamma_2: "
+            << "real=" << incgamma2.real() << "; img=" << incgamma2.imag()
+            << std::endl;
+
+  // Compute the Incomplete Beta function with two inputs
+  std::complex<long double> incgamma3 = incGamma3(a, b, z);
+
+  std::cout << "IncGamma_3: "
+            << "real=" << incgamma3.real() << "; img=" << incgamma3.imag()
+            << std::endl;
+
   return 0;
 }

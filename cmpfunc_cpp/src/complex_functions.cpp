@@ -1274,9 +1274,33 @@ std::complex<long double> Hyp2F1(std::complex<long double> a,
   return hyp_PS_complex_plane_rest(a, b, c, z);
 }
 
+std::complex<long double> Hyp1F1(std::complex<long double> a,
+                                 std::complex<long double> b,
+                                 std::complex<long double> c) {
+  // NOTE: The following is just a hacky way of computing the
+  // Confluent Hypergeometric Function by computing it from 2F1
+  // TODO: Improve the following computations using the exact def.
+  const long double large_args = pow(10, 12);
+  return Hyp2F1(a, large_args, b, c / large_args);
+}
+
 std::complex<long double> incBeta(std::complex<long double> x,
                                   std::complex<long double> a,
                                   std::complex<long double> b) {
   // Using formula in https://dlmf.nist.gov/8.17
   return pow(x, a) / a * Hyp2F1(a, 1 - b, a + 1, x);
+}
+
+std::complex<long double> incGamma2(std::complex<long double> x,
+                                    std::complex<long double> a) {
+  // https://www.cs.purdue.edu/homes/wxg/selected_works/section_02/068.pdf
+  std::complex<long double> GammaStar =
+      Hyp1F1(x, x + 1, -a) / exp(LogGamma(x + 1));
+  return exp(LogGamma(x)) * (1 - pow(a, x) * GammaStar);
+}
+
+std::complex<long double> incGamma3(std::complex<long double> x,
+                                    std::complex<long double> a,
+                                    std::complex<long double> b) {
+  return incGamma2(x, a) - incGamma2(x, b);
 }
