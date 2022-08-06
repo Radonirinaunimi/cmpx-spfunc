@@ -25,7 +25,7 @@ subdir('cmpfunc_cpp/src')
 
 # create executable for main
 higgsexen = executable(
-  'test_spfunc', './tests/test_spfunc.cpp',
+  'test_spfunc', './examples/test_spfunc.cpp',
   include_directories : inc,
   dependencies : [glib_dep, cmpx_bes],
   link_with : spfunclib,
