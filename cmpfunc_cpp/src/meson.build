@@ -1,4 +1,7 @@
-sources = ['./complex_functions.cpp',]
+sources = [
+  './complex_operators.cpp',
+  './complex_functions.cpp',
+]
 
 spfunclib = static_library(
   'cmp_spfunc',
