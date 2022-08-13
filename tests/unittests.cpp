@@ -1,18 +1,16 @@
 /*
  * =====================================================================================
  *
- *       Filename:  TestDY.cpp
+ *       Filename:  unittests.cpp
  *
- *    Description:  This file performs the benchmark of the full hadronic
- * expression and all the expressions it depends on with the HqT code
- *                  http://theory.fi.infn.it/grazzini/codes.html.
+ *    Description:  File testing the built-in functions
  *
  *        Version:  1.0
- *        Created:  18/02/2021 00:15:22
+ *        Created:  13/08/2022 00:15:22
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  Tanjona R. Rabemananjara, Roy Stegeman
+ *         Author:  Tanjona R. Rabemananjara
  *   Organization:  N3PDF
  *
  * =====================================================================================
