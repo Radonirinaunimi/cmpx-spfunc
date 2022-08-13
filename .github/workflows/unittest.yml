@@ -50,7 +50,9 @@ jobs:
         tar -zxvf release-0.6.tar.gz
         cd complex_bessel-release-0.6
         chmod +x build.sh
-        ./build.sh & cd build & sudo make install & cd ../../
+        ./build.sh
+        echo $PWD
+        cd build & sudo make install & cd ../../
         
         # Build the main codes & test
         cd tests
