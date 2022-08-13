@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  complex_functions.h
+ *       Filename:  complex_operators.h
  *
  *    Description:  Test library that computes special functions wtih cmpx args
  *

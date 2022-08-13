@@ -1,0 +1,55 @@
+name: Perform regression tests
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!main'
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        python-version: [3.7]
+    defaults:
+      run:
+        shell: bash --login {0}
+        working-directory: ./
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Python & PIP
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install meson & ninja
+      env:
+        repo_token: ${{ secrets.CML }}
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install meson ninja
+
+    - name: Install dependencies & cmpx-spfunc
+      run: |
+
+        # Download & Install `complex_bessel`
+        wget https://github.com/joeydumont/complex_bessel/archive/release-0.6.tar.gz
+        tar -zxvf release-0.6.tar.gz
+        cd complex_bessel-release-0.6
+        chmod +x build.sh
+        ./build.sh & cd ..
+        
+        # Build the main codes & test
+        cd tests
+        meson setup builddir
+        cd builddir
+        meson compile
+        ./unittest

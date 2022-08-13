@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  main.cpp
+ *       Filename:  test_spfunc.cpp
  *
  *    Description:  Test library that computes special functions wtih cmpx args
  *
