@@ -54,7 +54,7 @@ jobs:
         sudo make install
         cd ../../
         
-    - name: Install cmpx-spfunc
+    - name: Install cmpx-spfunc & Perform tests
       run: |
         cd tests
         meson setup builddir
