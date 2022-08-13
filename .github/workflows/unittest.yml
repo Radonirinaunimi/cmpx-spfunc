@@ -42,20 +42,20 @@ jobs:
         pip install -r requirements.txt
         pip install meson ninja
 
-    - name: Install dependencies & cmpx-spfunc
+    - name: Install dependencies
       run: |
-
-        # Download & Install `complex_bessel`
         wget https://github.com/joeydumont/complex_bessel/archive/release-0.6.tar.gz
         tar -zxvf release-0.6.tar.gz
         cd complex_bessel-release-0.6
         chmod +x build.sh
         ./build.sh
-        cd build & ls
+        cd build
         echo $PWD
-        sudo make install & cd ../../
+        sudo make install
+        cd ../../
         
-        # Build the main codes & test
+    - name: Install cmpx-spfunc
+      run: |
         cd tests
         meson setup builddir
         cd builddir
